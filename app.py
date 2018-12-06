@@ -39,7 +39,7 @@ def login():
 
             return redirect(next)
 
-        return render_template('login.html', form=form)
+    return render_template('login.html', form=form)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
