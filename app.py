@@ -43,10 +43,10 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-   form = RegistrationForm()
+    form = RegistrationForm()
 
-   if form.validate_on_submit():
-       user = User(email=form.email.data,
+    if form.validate_on_submit():
+        user = User(email=form.email.data,
                     username=form.username.data,
                     password=form.password.data)
         db.session.add(user)
@@ -55,5 +55,5 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', form = form )
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     app.run(debug=True)
